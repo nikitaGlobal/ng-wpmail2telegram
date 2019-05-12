@@ -80,7 +80,6 @@ if (! class_exists("Ngmailtelegram")) {
                     $this->settings[$k]['value'] = $this->options[$setting['key']];
                 }
             }
-            add_action('wp_enqueue_scripts', array($this, 'scripts'));
             add_action('admin_menu', array($this, 'menuItemAdd'));
             add_action('admin_init', array($this, 'settingsRegister'));
             add_action('plugins_loaded', array($this, 'processGetQuery'));
@@ -749,30 +748,6 @@ if (! class_exists("Ngmailtelegram")) {
         public function sectionCallBack()
         {
             echo __('<hr>', $this->prefix);
-        }
-            
-        /**
-         * Enqueue scripts
-         *
-         * @return void
-         **/
-        public function scripts()
-        {
-            wp_register_script(
-                $this->prefix,
-                plugin_dir_url(__FILE__) . '/plugin.js',
-                array('jquery'),
-                $this->version,
-                true
-            );
-            wp_localize_script(
-                $this->prefix,
-                $this->prefix,
-                array(
-                    'ajax_url' => admin_url('admin-ajax.php'),
-                )
-            );
-            wp_enqueue_script($this->prefix);
         }
             
         /**
