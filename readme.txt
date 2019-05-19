@@ -1,13 +1,13 @@
-=== NG-Lazyload ===
+=== NG-Mail2Telegram ===
 Contributors: nikitaglobal
 Plugin Name: NG-WpMail2Telegram
 Tags: telegram, wp-mail, wpmail, mail, notifications, messengers
 Author: Nikita Menshutin
 Requires at least: 3.6
-Tested up to: 5.1
-Stable tag: 1.4
+Tested up to: 5.2
+Stable tag: 1.1
 Requires PHP: 5.6
-Version: 1.0
+Version: 1.1
 License: 			GPLv2 or later
 License URI: 		http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,8 @@ Use WordPress' Add New Plugin feature, searching "NG-mail2Telegram, or download 
 
 == Changelog ==
 
+= 1.1 (2019-05-19) =
+* Better multilanguage support
 
 = 1.0 (2019-05-16) =
 * The First Upload, but was tested before at several sites

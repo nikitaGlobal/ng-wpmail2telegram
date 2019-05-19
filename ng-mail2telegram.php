@@ -4,7 +4,7 @@
      * Plugin Name: ng-mail2telegram
      * Description: Cross copy mail to telegram
      * Author: Nikita Menshutin
-     * Version: 1.0
+     * Version: 1.1
      * Author URI: http://nikita.global
      *
      * PHP version 7.2
@@ -36,8 +36,13 @@ if (! class_exists("Ngmailtelegram")) {
          **/
         public function __construct()
         {
-            $this->prefix      = 'Ngmailtelegram';
-            $this->version     = '1.0';
+            $this->prefix  = 'Ngmailtelegram';
+            $this->version = '1.1';
+            load_plugin_textdomain(
+                $this->prefix,
+                false,
+                'ng-mail2telegram/languages'
+            );
             $this->pluginName  = __('NG WP Mail to telegram', $this->prefix);
             $this->options     = get_option($this->prefix);
             $this->telegramApi = 'https://api.telegram.org/bot{bottoken}/{method}';
@@ -46,31 +51,31 @@ if (! class_exists("Ngmailtelegram")) {
                     'key'         => 'bottoken',
                     'title'       => __('Bot token', $this->prefix),
                     'placeholder' => __('Bot token', $this->prefix),
-                    'group'       => 'bot settings',
+                    'group'       => 'Bot settings',
                     'type'        => 'text',
                     'required'    => true,
                 ),
                 'botrest'       => array(
                     'key'      => 'botreset',
                     'title'    => __('init webhooks for this site', $this->prefix),
-                    'group'    => 'bot settings',
+                    'group'    => 'Bot settings',
                     'type'     => 'checkbox',
                     'required' => false,
                 ),
                 'messagefilter' => array(
                     'key'      => 'messagefilter',
                     'title'    => __('Message filter', $this->prefix),
-                    'group'    => 'bot settings',
+                    'group'    => 'Bot settings',
                     'type'     => 'select',
                     'required' => false,
                     'args'     => apply_filters(
                         $this->prefix . 'messageFilters', array(
-                            'none'      => __('Do not filter', $this->prefix),
-                            'subject'   => __('Send subject only', $this->prefix),
-                            'html'      => __('Send as html', $this->prefix),
-                            'short'     => __('Cut long message', $this->prefix),
-                            'stripTags' => __('Strip html tags', $this->prefix),
-                            'file'      => __('Send file', $this->prefix)
+                            'none'      => 'Do not filter',
+                            'subject'   => 'Send subject only',
+                            'html'      => 'Send as html',
+                            'short'     => 'Cut long message',
+                            'stripTags' => 'Strip html tags',
+                            'file'      => 'Send file'
                         )
                     )
                 )
@@ -80,6 +85,7 @@ if (! class_exists("Ngmailtelegram")) {
                     $this->settings[$k]['value'] = $this->options[$setting['key']];
                 }
             }
+            add_action('init', array($this, 'loadTranslation'));
             add_action('admin_init', array($this, 'settingsRegister'));
             add_action('admin_init', array($this, 'processGetQuery'));
             add_action('init', array($this, 'initBot'));
@@ -232,7 +238,7 @@ if (! class_exists("Ngmailtelegram")) {
                 
             return $args;
         }
-    
+            
         /**
          * Query filter - html content
          *
@@ -317,8 +323,8 @@ if (! class_exists("Ngmailtelegram")) {
             $chatid    = $args['chat_id'];
             unset($args['chat_id']);
             unset($args['text']);
-            $linebreak = "\r\n";
-            $boundary  = $this->prefix . crc32($text);
+            $linebreak       = "\r\n";
+            $boundary        = $this->prefix . crc32($text);
             $args['headers'] = array(
                 'Content-Type' => 'multipart/form-data; boundary=' . $boundary . '',
                 'Accept'       => "*/*"
@@ -388,13 +394,14 @@ if (! class_exists("Ngmailtelegram")) {
         {
             $current_user = wp_get_current_user();
             if ($current_user->ID == 0) {
-                wp_die(__($this->strings['notloggedin']));
+                wp_die(__($this->strings['notloggedin'], $this->prefix));
             }
             update_user_meta($current_user->ID, $this->prefix, $data['data']);
             $this->_say($data['data'], __($this->strings['subscribed']));
             die(
                 __(
-                    $this->strings['subscribed']
+                    $this->strings['subscribed'],
+                    $this->prefix
                 )
             );
         }
@@ -688,7 +695,7 @@ if (! class_exists("Ngmailtelegram")) {
                 
                 
             $reply = (wp_remote_post($url, $this->args));
-            $body=(wp_remote_retrieve_body($reply));
+            $body  = (wp_remote_retrieve_body($reply));
                 
                 
             return $body;
@@ -795,7 +802,7 @@ if (! class_exists("Ngmailtelegram")) {
                     echo 'selected ';
                 }
                 echo ">";
-                echo $v;
+                _e($v, $this->prefix);
                 echo '</option>';
                     
             }
@@ -814,7 +821,8 @@ if (! class_exists("Ngmailtelegram")) {
             echo $this->prefix . '[';
             echo $args['key'] . ']" ';
             if (isset($args['placeholder'])) {
-                echo ' placeholder="' . $args['placeholder'] . '"';
+                echo ' placeholder="';
+                echo __($args['placeholder'], $this->prefix) . '"';
             }
             if (isset($args['required']) && $args['required']) {
                 echo ' required="required"';
@@ -886,7 +894,8 @@ if (! class_exists("Ngmailtelegram")) {
                 serialize(
                     array(
                             get_available_languages(),
-                            $this->strings
+                            $this->strings,
+                            $this->version
                         )
                 )
             )
@@ -902,7 +911,7 @@ if (! class_exists("Ngmailtelegram")) {
                 foreach ($this->strings as $text) {
                     update_option(
                         $this->prefix . crc32($text . $shortslug),
-                        __($text, $this->prefix) . $lang
+                        __($text, $this->prefix, $this->prefix)
                     );
                 }
             }
@@ -926,6 +935,16 @@ if (! class_exists("Ngmailtelegram")) {
             }
                 
             return $text;
+        }
+            
+        /**
+         * Loading language files
+         *
+         * @return void
+         */
+        public function loadTranslation()
+        {
+            
         }
             
         /**
