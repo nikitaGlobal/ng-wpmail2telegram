@@ -19,14 +19,18 @@ Developed by Nikita Menshutin
 [https://nikita.global/](https://nikita.global)
 
 ** Set up **
-1. Register your own bot as described [https://core.telegram.org/bots#6-botfather](here)
+1. Register your own bot as described [https://core.telegram.org/bots#3-how-do-i-create-a-bot](here)
 2. Fill in plugin settings with your bot token
 3. Each user which has access to wp-admin should start chat with your bot and follow the subscription link
+
+Your website should support https.
 
 ** Message Filters **
 Currently can send mails as plaintext, files, subjects only and truncated message.
 You can extend this range using the filters - see source code.
 
+This plugin makes HTTP-requests to 3rd party service [Telegram API](https://core.telegram.org/api)
+to send notifications.
 
 == Description ==
 
