@@ -4,7 +4,9 @@
      * Plugin Name: ng-mail2telegram
      * Description: Cross copy mail to telegram
      * Author: Nikita Menshutin
-     * Version: 1.1
+     * Text Domain: ng-mail2telegram
+     * Domain Path: /languages/
+     * Version: 1.2
      * Author URI: http://nikita.global
      *
      * PHP version 7.2
@@ -36,8 +38,8 @@ if (! class_exists("Ngmailtelegram")) {
          **/
         public function __construct()
         {
-            $this->prefix  = 'Ngmailtelegram';
-            $this->version = '1.1';
+            $this->prefix  = 'ng-mail2telegram';
+            $this->version = '1.2';
             load_plugin_textdomain(
                 $this->prefix,
                 false,

@@ -42,6 +42,9 @@ Use WordPress' Add New Plugin feature, searching "NG-mail2Telegram, or download 
 
 == Changelog ==
 
+= 1.2 (2019-05-20) =
+* Better multilanguage support
+
 = 1.1 (2019-05-19) =
 * Better multilanguage support
 
