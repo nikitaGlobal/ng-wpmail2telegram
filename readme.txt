@@ -3,11 +3,13 @@ Contributors: nikitaglobal
 Plugin Name: NG-WpMail2Telegram
 Tags: telegram, wp-mail, wpmail, mail, notifications, messengers
 Author: Nikita Menshutin
+Text Domain: ng-mail2telegram
+Domain Path: /languages
 Requires at least: 3.6
 Tested up to: 5.2
-Stable tag: 1.1
+Stable tag: 1.3
 Requires PHP: 5.6
-Version: 1.1
+Version: 1.3
 License: 			GPLv2 or later
 License URI: 		http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,8 +44,12 @@ Use WordPress' Add New Plugin feature, searching "NG-mail2Telegram, or download 
 
 == Changelog ==
 
+= 1.3 (2019-05-20) =
+* Translation strings are more evident for parsers
+* Bugfix
+
 = 1.2 (2019-05-20) =
-* Better multilanguage support
+* Better multilanguage support (try)
 
 = 1.1 (2019-05-19) =
 * Better multilanguage support
