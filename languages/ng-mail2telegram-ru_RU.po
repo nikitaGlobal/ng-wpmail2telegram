@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-05-19 21:16+0300\n"
+"PO-Revision-Date: 2019-05-19 23:57+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? "
+"1 : 2);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ng-mail2telegram.php:41 trunk/ng-mail2telegram.php:41
+msgid "NG WP Mail to telegram"
+msgstr "NG Отправка писем в Телеграм"
+
+#: ng-mail2telegram.php:47 ng-mail2telegram.php:48 trunk/ng-mail2telegram.php:47 trunk/ng-mail2telegram.php:48
+msgid "Bot token"
+msgstr "Ключ бота"
+
+#: ng-mail2telegram.php:55 trunk/ng-mail2telegram.php:55
+msgid "init webhooks for this site"
+msgstr "обрабатывать веб-зацепы на этом сайте"
+
+#: ng-mail2telegram.php:62 trunk/ng-mail2telegram.php:62
+msgid "Message filter"
+msgstr "Фильтр сообщений"
+
+#: ng-mail2telegram.php:68 trunk/ng-mail2telegram.php:68
+msgid "Do not filter"
+msgstr "Не фильтровать"
+
+#: ng-mail2telegram.php:69 trunk/ng-mail2telegram.php:69
+msgid "Send subject only"
+msgstr "Отправлять только заголовок"
+
+#: ng-mail2telegram.php:70 trunk/ng-mail2telegram.php:70
+msgid "Send as html"
+msgstr "Отправлять в формате HTML"
+
+#: ng-mail2telegram.php:71 trunk/ng-mail2telegram.php:71
+msgid "Cut long message"
+msgstr "Обрезать длинные сообщения"
+
+#: ng-mail2telegram.php:72 trunk/ng-mail2telegram.php:72
+msgid "Strip html tags"
+msgstr "Убирать теги"
+
+#: ng-mail2telegram.php:73 trunk/ng-mail2telegram.php:73
+msgid "Send file"
+msgstr "Отправлять файл"
+
+#: ng-mail2telegram.php:370 trunk/ng-mail2telegram.php:370
+msgid "Broken link"
+msgstr "Недействительная ссылка"
+
+#: ng-mail2telegram.php:505 trunk/ng-mail2telegram.php:505
+msgid "Settings"
+msgstr "Настройки"
+
+#: ng-mail2telegram.php:620 trunk/ng-mail2telegram.php:620
+msgid "Testing bot"
+msgstr "Проверяем бота"
+
+#: ng-mail2telegram.php:831 trunk/ng-mail2telegram.php:831
+msgid "<hr>"
+msgstr "<hr>"
+
+msgid "Bot settings"
+msgstr "Настройки бота"
+
+msgid "Subscribed"
+msgstr "Вы подписаны"
+
+msgid "Please log in first"
+msgstr "Пожалуйста, авторизуйтесь"
+
+msgid "Unknown command"
+msgstr "Неизвестная команда"
+
+msgid "Hello. Please follow this link to subscribe:"
+msgstr "Здравствуйте. Пожалуйста, перейдите по ссылке чтобы подписаться:"
+
+#. Found in description paragraph.
+msgid "Create your own notification bot which will send emails to your dashboard users via telegram."
+msgstr "Создайте бота, который будет отправлять админам сайта уведомления в Телеграме"
+
+#. Found in description paragraph.
+msgid ""
+"Sends all mails to telegram user via your own bot.\n"
+"No need in many other plugins as you can use any email notifications which will be redirected to telegram"
+msgstr ""
+"Отправляет все письма пользователям Телеграма через вашего бота.\n"
+"Заменяет множество других плагинов т.к. вы можете использовать любые почтовые уведомления и они будут "
+"перенаправляться в Телеграм."
+
+#. Plugin name.
+msgid "NG-Mail2Telegram"
+msgstr "NG-Mail2Telegram"
+
+#. Found in installation list item.
+msgid "Each user which has access to wp-admin should start chat with your bot and follow the subscription link"
+msgstr ""
+"Каждому пользователю, у которого есть доступ в админку, надо добавить бота, потом перейти по ссылке для "
+"подписки."
+
+#. Found in description paragraph.
+msgid ""
+"This plugin makes HTTP-requests to 3rd party service <a href=\"https://core.telegram.org/api\">Telegram API</"
+"a>\n"
+"to send notifications."
+msgstr ""
+"Плагин отправляет http-запросы на внешний сервис <a href=\"https://core.telegram.org/api\">Telegram API</a> "
+"для рассылки уведомлений"
+
+#. Found in description paragraph.
+msgid ""
+"** Message Filters **\n"
+"Currently can send mails as plaintext, files, subjects only and truncated message.\n"
+"You can extend this range using the filters - see source code."
+msgstr ""
+"** Фильтры сообщений **\n"
+"В настоящий момент сообщения могут содержать текст письма, файл с письмом, заголовок, либо обрезанное "
+"сообщение."
+
+#. Found in description paragraph.
+msgid "Your website should support https."
+msgstr "Для работы плагина на вашем сайте должна быть поддержка https"
+
+#. Found in description paragraph.
+msgid "<a href=\"https://nikita.global\">https://nikita.global/</a>"
+msgstr "<a href=\"https://nikita.global\">https://nikita.global/</a>"
+
+#. Found in installation paragraph.
+msgid "Use WordPress' Add New Plugin feature, searching \"NG-mail2Telegram, or download the archive and:"
+msgstr ""
+"С помощью кнопки WordPress \"Добавить плагин\", найдите \"NG-mail2telegram\" или скачайте архив, затем:"
+
+#. Found in installation list item.
+msgid "Fill in plugin settings with your bot token"
+msgstr "Добавьте в настройки bot token"
+
+#. Found in installation list item.
+msgid "Register your own bot as described <a href=\"here\">https://core.telegram.org/bots#6-botfather</a>"
+msgstr "Создайте бота по инструкции <a href=\"here\">https://core.telegram.org/bots#6-botfather</a>"
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr "Активируйте плагин в меню \"Плагины\""
+
+#. Found in installation list item.
+msgid "Upload plugin directory to the <code>/wp-content/plugins/</code> directory"
+msgstr "Активируйте плагин в меню \"Плагины\""
+
+#. Found in installation list item.
+msgid "Unzip the archive on your computer  "
+msgstr "Распакуйте архив на компьютере."
+
+#. Found in changelog list item.
+msgid "Better multilanguage support"
+msgstr "Улучшена поддержка языков"
+
+#. Found in changelog list item.
+msgid "The First Upload, but was tested before at several sites"
+msgstr "Первая загрузка. Но плагин был испытан на нескольких сайтах "
