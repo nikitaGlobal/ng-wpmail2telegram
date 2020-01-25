@@ -6,7 +6,7 @@
      * Author: Nikita Menshutin
      * Text Domain: NG-Mail2Telegram
      * Domain Path: languages
-     * Version: 1.3
+     * Version: 1.4
      * Author URI: http://nikita.global
      *
      * PHP version 7.2
@@ -39,7 +39,7 @@
             public function __construct()
             {
                 $this->prefix  = 'NG-Mail2Telegram';
-                $this->version = '1.3';
+                $this->version = '1.4';
                 load_plugin_textdomain(
                     $this->prefix,
                     false,
@@ -817,7 +817,7 @@
                 foreach ($args['args'] as $k => $v) {
                     echo '<option ';
                     echo 'value="' . $k . '" ';
-                    if ($args['value'] == $k) {
+                    if (isset($args['value']) && $args['value'] == $k) {
                         echo 'selected ';
                     }
                     echo ">";

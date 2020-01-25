@@ -6,7 +6,7 @@ Author: Nikita Menshutin
 Text Domain: ng-mail2telegram
 Domain Path: /languages
 Requires at least: 3.6
-Tested up to: 5.2
+Tested up to: 5.3.2
 Stable tag: 1.3
 Requires PHP: 5.6
 Version: 1.3
@@ -43,6 +43,9 @@ Use WordPress' Add New Plugin feature, searching "NG-mail2Telegram, or download 
 6. Each user which has access to wp-admin should start chat with your bot and follow the subscription link
 
 == Changelog ==
+= 1.4 (2020-01-25)
+* Assets updated
+* Checked compatibility up to 5.3.2
 
 = 1.3 (2019-05-20) =
 * Translation strings are more evident for parsers
